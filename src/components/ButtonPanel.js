@@ -3,6 +3,10 @@ import Button from './Button'
 import './css/ButtonPanel.css'
 
 class ButtonPanel extends Component {
+    handleBtnClick(btnName) {
+        this.props.onChange(btnName);
+    }  
+
   render() {
     return ( 
         <div className="component-button-panel">
@@ -14,7 +18,7 @@ class ButtonPanel extends Component {
           </div>
 
           <div>
-            <Button name="7" />
+            <Button name="7" onChange={this.handleBtnClick.bind(this)}/>
             <Button name="8" />
             <Button name="9" />
             <Button name="x" className="orange"/>
